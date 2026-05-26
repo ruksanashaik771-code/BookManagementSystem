@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this is ur profile page</title>
+</head>
+<body>
+<h1>this is ur profile page</h1>
+<a href="http://127.0.0.1:8000/book/contacts/">contact page</a>
+<h2> user name:{{name}}</h2>
+<h2>user email is :{{email}}</h2>
+{% if role == "admin" %}
+   <h4> this is admin portal</h4>
+{% endif %}
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        {% for data in user_data %}
+        <tr>
+    <td> {{data.name}} </td>
+    <td> {{data.email}} </td>
+    </tr>
+    {% endfor %}
+
+</table>
